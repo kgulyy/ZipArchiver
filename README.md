@@ -1,4 +1,4 @@
 ZipArchiver
 ===========
 
-App can zipped and unzipped files
+App can archived and unzipped files
