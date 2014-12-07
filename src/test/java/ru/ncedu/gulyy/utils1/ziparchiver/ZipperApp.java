@@ -21,6 +21,11 @@ public class ZipperApp {
     }
 
     public static void createZipArchive(String zipArchiveName, String... fileNames) {
+       //TODO Throw Null Pointer exception is a very bad practice!
+        //Generally some new custom exception is provided with some code, how it is implemented in ORACLE (like ORA-XXX)
+        // In this case you can throw IllegalArgumentException, or extend from this exception
+        // and create your own with message
+        // throwing NPE say nothing to customer which is using your application
         if (zipArchiveName == null || fileNames == null) {
             throw new NullPointerException();
         }
