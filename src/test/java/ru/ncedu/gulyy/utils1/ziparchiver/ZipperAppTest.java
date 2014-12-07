@@ -52,7 +52,7 @@ public class ZipperAppTest {
     //TODO Even I have exception test is marked as successful - As the result you can check that some folder exists
     public void createZipArchiveTest_caseFileNotFound() {
         ZipperApp.createZipArchive(System.getProperty("user.dir") + File.separator + "src\\test\\workspace\\zip",
-                                    "classpath:ZipArchiver\\src\\test\\workspace\\files\\1.xml");
+                                   "D:\\Java\\ZipArchiver\\src\\test\\workspace\\files\\1.xml");
     }
 
     @Test
