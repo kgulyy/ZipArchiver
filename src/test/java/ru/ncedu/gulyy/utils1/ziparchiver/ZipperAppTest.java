@@ -5,9 +5,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
+
+/*
+TODO http://stackoverflow.com/questions/14209085/how-to-define-relative-path-in-java
+I cant execute this tests because they contain absolute path. So it is better to use relative path +
+properties in resource folder (file like config.properties)
+
++ instead of // it is better to use File.separator - platform independent separator
+ */
 
 /**
  * Created by Константин on 01.12.2014.
@@ -15,6 +24,7 @@ import static org.junit.Assert.assertEquals;
 public class ZipperAppTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+
 
     @Before
     public void setUpStreams() {
@@ -39,9 +49,10 @@ public class ZipperAppTest {
     }
 
     @Test
+    //TODO Even I have exception test is marked as successful - As the result you can check that some folder exists
     public void createZipArchiveTest_caseFileNotFound() {
-        ZipperApp.createZipArchive("D:\\Java\\ZipArchiver\\src\\test\\workspace\\zip",
-                                    "D:\\Java\\ZipArchiver\\src\\test\\workspace\\files\\1.xml");
+        ZipperApp.createZipArchive(System.getProperty("user.dir") + File.separator + "src\\test\\workspace\\zip",
+                                   "D:\\Java\\ZipArchiver\\src\\test\\workspace\\files\\1.xml");
     }
 
     @Test
